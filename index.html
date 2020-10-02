@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>GreenLife 123</title>
+    <script type="text/javascript" defer src="index.js"></script>
+    <script type="text/javascript" src="src/plant.js"></script>
+    <script type="text/javascript" src="src/ApiService.js"></script>
+    <script type="text/javascript" src="src/reaction.js"></script>
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+
+
+<header>
+    <div id="greenlife-header">
+        <p style="text-align:center">
+            <button id="new-plant-btn"><b>GreenL!fe 123</b></button> <br />            
+            <p style="text-align:center">
+                <emojiButton id="thirsty-btn">☀️ happy </button>
+            
+                <emojiButton id="thirsty-btn">💦 thirsty</button>
+            
+                <emojiButton id="thirsty-btn">🥀 sad</button>  
+            </p>
+                           <b><center>Pic-A-Plant | Click-A-Mood</center></b>
+
+
+        </p>
+    </div>
+    </header>
+
+
+    <body>
+    <!-- <div class="container"> -->
+        <form id="plant-form" class="form">
+           
+            <h3>Create a plant!</h3>
+
+            <input id="name-field" type="text" name="name" placeholder="Enter plant's name..."
+                class="input-text">
+            <input id="img-url" type="text" name="img_src" placeholder="Enter image url..."
+                class="img-url">
+            <input id="caption" type="text" name="caption" placeholder="Caption this..."
+            class="input-text"> <br />
+            <input type="submit" name="submit" value="Create New Plant" class="submit" />
+    
+        </form>
+
+    <!-- </div> -->
+
+    <main>
+
+    <ul id="plant-list" class="cards">
+        <!-- Plant cards here -->
+    </ul>
+
+    </main>
+
+
+</body>
+
+
+</html>
