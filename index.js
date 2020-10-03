@@ -1,48 +1,42 @@
 // dom stuff
 
 const plantForm = document.querySelector("#plant-form")
-const plantList = document.querySelector("#plant-list")
+const plantList = document.getElementById("collection")
 
 //  event listener
 plantForm.addEventListener("submit", handleFormSubmit)
 
 // event handlers
 
-function handleFormSubmit(event) {
-    event.preventDefault()
-}
+function handleFormSubmit(e) {
+    e.preventDefault()
 
-// get form data
+    // get form data
 
 const newPlant = {
-    name: event.target["name"].value,
-    img_url: event.target["img_url"].value,
-    caption: event.target["caption"].value,
-    reaction: ☀️ 💦 🥀
+    name: e.target["name"].value,
+    img_src: e.target["img_src"].value,
+    caption: e.target["caption"].value
 
 }
 
-// save plant on sever w/fetch request
-// POST /plants
-ApiService.addPlant(newPlant)
-    .then(actualNewPlant => {
-        new Plant(actualNewPlant)
+    // save plant on sever w/fetch request
+    // POST /plants
+    ApiService.addPlant(newPlant)
+        .then(actualNewPlant => {
+            new Plant(actualNewPlant)
+        })
+        .catch(error => alert(error))
+    }
+
+    ApiService.fetchPlants().then(actualPlantData => {
+        renderAllPlants(actualPlantData)
     })
-    .catch(error => alert(error))
+        //Render Helpers
+    function renderOnePlant(plantObj) {
+        const plant = new Plant(plantObj)
+    }
 
-}
-
-//Render Helpers
-function renderOnePlant(plantObj) {
-    const plant = new Plant(plantObj)
-}
-
-function renderAllPlants(plants) {
-    plants.forEach(renderOnePlant)
-}
-
-//Initial Render
-
-ApiService.getAllPlants().then(actualPlantData => {
-    renderAllPlants(actualPlantData)
-})
+    function renderAllPlants(plants) {
+        plants.forEach(renderOnePlant)
+    }

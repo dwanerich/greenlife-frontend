@@ -5,9 +5,9 @@
     <meta charset="utf-8" />
     <title>GreenLife 123</title>
     <script type="text/javascript" defer src="index.js"></script>
-    <script type="text/javascript" src="src/plant.js"></script>
-    <script type="text/javascript" src="src/ApiService.js"></script>
-    <script type="text/javascript" src="src/reaction.js"></script>
+    <script type="text/javascript" src="plant.js"></script>
+    <script type="text/javascript" src="ApiService.js"></script>
+    <!-- <script type="text/javascript" src="reaction.js"></script> -->
     <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -39,12 +39,12 @@
             <h3>Create a plant!</h3>
 
             <input id="name-field" type="text" name="name" placeholder="Enter plant's name..."
-                class="input-text">
-            <input id="img-url" type="text" name="img_src" placeholder="Enter image url..."
-                class="img-url">
+                class="name-input"> <br>
+            <input id="img-src" type="text" name="img_src" placeholder="Enter image url..."
+                class="img-input"><br>
             <input id="caption" type="text" name="caption" placeholder="Caption this..."
-            class="input-text"> <br />
-            <input type="submit" name="submit" value="Create New Plant" class="submit" />
+            class="caption-input"><br>
+            <input type="submit" name="submit" value="Create New Plant" class="submit-input" />
     
         </form>
 
@@ -52,9 +52,9 @@
 
     <main>
 
-    <ul id="plant-list" class="cards">
+    <div id="collection" class="cards">
         <!-- Plant cards here -->
-    </ul>
+    </div>
 
     </main>
 
