@@ -1,6 +1,11 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+  width: 240px;
+  height: 350px;
 }
 
 #plant-header {
@@ -12,41 +17,42 @@ body {
   padding: 1rem;
 }
 
-#plant-header img {
-  height: 6rem;
-  width: auto;
-}
-
-#plant-list {
+#collection {
   margin: 2rem;
 }
 
 .card {
   text-align: center;
   border: grey solid 1px;
-  padding: 1rem;
+  padding: 2rem;
   width: 15rem;
   height: 25rem;
   display: inline-grid;
-  margin: 1rem 2rem;
+  margin: 1rem 1rem;
 }
 
 .plant-avatar {
   justify-self: center;
   height: 12rem;
-  width: auto;
+  width: 12rem;
 }
 
 button {
   position: relative;
-  background-color: #65db48;
+  background-color: #ffffff;
   border: none;
   border-radius: 5px;
-  height: 5rem;
+  height: 4rem;
   width: max-content;
-  color: whitesmoke;
-  font-size: 75px;
+  color: rgb(0, 0, 0);
+  font-size: 50px;
   justify-self: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+button:hover {
+  background-color: rgb(248, 248, 248);
+  border: #1fdf19 solid 1px;
+  color: rgb(31, 26, 45);
 }
 
 emojiButton {
@@ -56,23 +62,19 @@ emojiButton {
   border-radius: 5px;
   height: 4rem;
   width: max-content;
-  color: whitesmoke;
-  font-size: 45px;
+  color: rgb(92, 51, 51);
+  font-size: 30px;
   justify-self: center;
 
 }
 
 emojiButton:hover {
-  background-color: whitesmoke;
+  background-color: rgb(255, 255, 255);
   border: #000000 solid 1px;
   color: #41cc41;
 }
 
-button:hover {
-  background-color: whitesmoke;
-  border: #000000 solid 1px;
-  color: #41cc41;
-}
+
 
 .container {
   padding: 1rem;
@@ -83,8 +85,8 @@ button:hover {
   opacity: .8;
 }
 
-.plant-form {
-  width: 25%
+.form {
+  width: 50%
 }
 
 .submit-input {
@@ -96,14 +98,14 @@ button:hover {
   color: whitesmoke;
   font-size: 18px;
   justify-self: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   margin: 3px;
 }
 
 .submit-input:hover {
-  background-color: whitesmoke;
+  background-color: rgb(255, 255, 255);
   border: #000000 solid 1px;
-  color: #1a99ee;
+  color: #8cf316;
 }
 
 
@@ -112,7 +114,7 @@ button:hover {
   height: 2rem;
   width: 60%;
   font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   margin: 3px;
 }
 
@@ -121,7 +123,7 @@ button:hover {
   height: 2rem;
   width: 60%;
   font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   margin: 3px;
 }
 
@@ -130,7 +132,7 @@ button:hover {
   height: 2rem;
   width: 60%;
   font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   margin: 3px;
 }
 

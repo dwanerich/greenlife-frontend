@@ -20,14 +20,14 @@ class Plant {
     }
 
     renderInnerHTML() {
-        const { img_src, name, caption} = this.plant
+        const { name, img_src, caption} = this.plant
         return `
       <div class="img-input">
+        <div class="name-input">${name}</div>
         <img src="${img_src}" alt="${name}">
       </div>
-        <div class="name-input">${name}</div>
-        <div class="description-input">${caption}</div>
-      </button>
+      <div class="description-input"><br> <br>${caption}</div>
+
     `
     }
   }
