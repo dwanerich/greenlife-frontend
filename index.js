@@ -1,6 +1,6 @@
 // dom stuff
 
-const plantForm = document.querySelector("#plant-form")
+const plantForm = document.getElementById("form")
 const plantList = document.getElementById("collection")
 const happyBtn = document.getElementById('happy-btn')
 const thirstyBtn = document.getElementById('thirsty-btn')
@@ -23,28 +23,29 @@ sadBtn.addEventListener('click', () => {
 
 // event handlers
 
-function handleFormSubmit(e) {
-    e.preventDefault()
-    // form.reset to be enabled !!!!!!
+function handleFormSubmit(event) {
+    event.preventDefault()
 
     // get form data
 
 const newPlant = {
-    name: e.target["name"].value,
-    img_src: e.target["img_src"].value,
-    caption: e.target["caption"].value
-
+    name: event.target["name"].value,
+    img_src: event.target["img_src"].value,
+    caption: event.target["caption"].value
 }
 
-function handleReaction(e) {
-    e.preventDefault()
+// plantForm.reset()
+console.log(newPlant)
 
-}
+// function handleReaction(e) {
+//     e.preventDefault()
+
+// }
 
     // save plant on sever w/fetch request
     // POST /plants
-    ApiService.addPlant(newPlant)
-        .then(actualNewPlant => {
+    ApiService.addPlant(newPlant).then(actualNewPlant => {
+        console.log("actual: ", actualNewPlant)
         new Plant(actualNewPlant)
         })
         .catch(error => alert(error))

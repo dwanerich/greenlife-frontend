@@ -1,5 +1,5 @@
-class Reaction {
-    constructor(emoji) {
-    this.emoji = emoji
-    }
-}
+// class Reaction {
+//     constructor(emoji) {
+//     this.emoji = emoji
+//     }
+// }

@@ -15,6 +15,7 @@ class ApiService {
             body: JSON.stringify(newPlant)
         })
             .then(response => {
+            
                 if (response.ok) {
                     return response.json()
                 } else {
@@ -23,7 +24,28 @@ class ApiService {
             })
     }
 
-    static donatePlant(id) {
+    // static addPlant() {
+    //     event.preventDefault();
+    //     const plant = {
+    //         name: document.getElementById('name-input').value,
+    //         img_src: document.getElementById('img-input').value,
+    //         caption: document.getElementById('caption-input').value
+    //     }
+
+    //    return fetch("http://localhost:3000/plants", {
+    //         method: "POST",
+    //         body: JSON.stringify(plant),
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //             "Accept": "application/json"
+    //         }
+    //     })
+    //     .then(response => response.json())
+    //     .then(plant => console.log(plant))
+    // }
+
+
+    static deletePlant(id) {
         return fetch(`http://localhost:3000/plants/${id}`, {
             method: "DELETE"
         })

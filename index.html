@@ -5,45 +5,53 @@
     <meta charset="utf-8" />
     <title>GreenLife 123</title>
     <script type="text/javascript" defer src="index.js"></script>
-    <script type="text/javascript" src="plant.js"></script>
+    <script type="text/javascript" defer src="plant.js"></script>
     <script type="text/javascript" src="ApiService.js"></script>
-    <!-- <script type="text/javascript" src="reaction.js"></script> -->
+    <script type="text/javascript" src="reaction.js"></script>
     <link rel="stylesheet" href="index.css" />
+
+    
 </head>
 
 
 
-<header>
+<header class="header">
     <div id="greenlife-header">
         <p style="text-align:center">
-            <button id="new-plant-btn">GreenL!fe🌱123</button> <br>
-        </p>
+
             
+            <button id="new-plant-btn">GreenL!fe🌱123</button> <br>
+      
     
-                <center>
+              <div class="reactions">  <center>
                 <ul>
                 <li><emojiButton id="happy-btn">☀️ happy</button></li>
-                    <li><emojiButton id="thirsty-btn">thirsty 💦</button></li>
+                    <li><emojiButton id="thirsty-btn">💦 thirsty</button></li>
                     <li> <emojiButton id="sad-btn">🥀 sad</button></li>
-                </ul> </center>
+                </ul> </center> </div>
+
+                
             
     </div>
     </header>
 
 
     <body>
+        <div class="react">
+
+        </div>
     
     <main>
 
-    <div id="collection" class="cards">
+    <div id="collection" class="collection">
         <!-- Plant cards here -->
     </div>
 
-    <form id="plant-form" class="form">
+    <form id="form" class="form">
         <h3>Pic-A-Plant</h3>
-        <input id="name-field" type="text" name="name" placeholder="Enter plant's name..." class="name-input">
-        <input id="img-src" type="text" name="img_src" placeholder="Enter image url..." class="img-input">
-        <input id="caption" type="text" name="caption" placeholder="Caption this..." class="caption-input"> <br>
+        <input id="name-input" type="text" name="name" placeholder="Enter plant's name..." class="name-input">
+        <input id="img-input" type="text" name="img_src" placeholder="Enter image url..." class="img-input">
+        <input id="caption-input" type="text" name="caption" placeholder="Caption this..." class="caption-input"> <br>
         <input type="submit" name="submit" value="Create-A-Plant" class="submit-input" />
     </form>
 

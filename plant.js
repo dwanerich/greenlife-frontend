@@ -13,21 +13,26 @@ class Plant {
         return card
     }
 
-    handleClick = (e) => {
-        if (e.target.dataset.action === "byebye") {
-            ApiService.donatePlant(this.plant.id).then(this.card.remove())
+    handleClick = (event) => {
+        if (event.target.dataset.action === "byebye") {
+            ApiService.deletePlant(this.plant.id).then(this.card.remove())
         }
     }
 
     renderInnerHTML() {
-        const { name, img_src, caption} = this.plant
+      const { img_src, name, caption} = this.plant
         return `
-      <div class="img-input">
+        <div class="img-input"><img src="${img_src}" alt="${name}"></div>
         <div class="name-input">${name}</div>
-        <img src="${img_src}" alt="${name}">
-      </div>
-      <div class="description-input"><br> <br>${caption}</div>
-
-    `
+      <div class="caption-input">${caption}</div>
+      <div class="reactions">  <center>
+      
+        <ul>
+        <li><emojiButton id="happy-btn">☀️ happy</button></li>
+        <li><emojiButton id="thirsty-btn">💦 thirsty</button></li>
+        <li> <emojiButton id="sad-btn">🥀 sad</button></li>
+        </ul> </center> </div>`
     }
-  }
+    
+}
+
