@@ -2,6 +2,7 @@ class Plant {
     constructor(plantObj) {
     this.plant = plantObj
     this.card = this.createCard()
+    // reaction.plants.push(this)
     }
 
     createCard() {
@@ -20,18 +21,27 @@ class Plant {
     }
 
     renderInnerHTML() {
-      const { img_src, name, caption} = this.plant
-        return `
-        <div class="img-input"><img src="${img_src}" alt="${name}"></div>
-        <div class="name-input">${name}</div>
-      <div class="caption-input">${caption}</div>
-      <div class="reactions">  <center>
-      
-        <ul>
-        <li><emojiButton id="happy-btn">☀️ happy</button></li>
-        <li><emojiButton id="thirsty-btn">💦 thirsty</button></li>
-        <li> <emojiButton id="sad-btn">🥀 sad</button></li>
-        </ul> </center> </div>`
+                const { img_src, name} = this.plant
+                return `
+                <div class="img-input"><img src="${img_src}" alt="${name}"></div>
+                <div class="name-input">${name}</div>
+            //   <div class="caption-input"></div>
+
+            <center>
+                    <div class="buttonwrapper">
+                        <h1 id="counter">0</h1>
+                        <button id="happy-reaction">🌞</button>
+                        <button id="thirsty-reaction">💦</button>
+                        <button id="sad-btn">🥀</button>
+                    
+                    </div>
+
+                </center>
+               
+            
+            
+            
+            `
     }
     
 }

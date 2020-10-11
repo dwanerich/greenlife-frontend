@@ -1,11 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
+  background-color: black;
+}
+
+#parent {
+  height: 51px;
+  white-space: nowrap;
+  overflow: hidden; 
+  font-family: 'Source Code Pro', monospace;  
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  position: relative;
+}
+
+#border {
+  border-bottom: solid 3px rgba(0,255,0,.75);
+  position: absolute;
+  right: -7px;
+  width: 20px;
+}
+
+/* Animation */
+#parent {
+  animation: animated-text 2s steps(30,end) 1s 1 normal both
+}
+
+#border {
+   animation: animated-cursor 600ms steps(30,end) infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 480px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-bottom-color: rgba(0,255,0,.75);}
+  to{border-bottom-color: transparent;}
 }
 
 img {
-  width: 240px;
-  height: 350px;
+  width: 320px;
+  height: 405px;
+    border: rgba(0,255,0,.75) solid 1.5px;
+
 }
 
 #plant-header {
@@ -23,12 +68,13 @@ img {
 
 .card {
   text-align: center;
-  border: grey solid 1px;
+  border: rgb(49, 193, 250) solid 1.5px;
   padding: 2rem;
-  width: 15rem;
-  height: 25rem;
+  width: 20rem;
+  height: 28rem;
   display: inline-grid;
   margin: 1rem 1rem;
+  background-color: rgb(17,17,17);
 }
 
 .plant-avatar {
@@ -39,68 +85,60 @@ img {
 
 button {
   position: relative;
-  background-color: #ffffff;
-  border: none;
+  background-color: transparent;
+  border: rgba(0,255,0,.75);
   border-radius: 5px;
-  height: 4rem;
+  height: 3.5rem;
   width: max-content;
-  color: rgb(0, 0, 0);
-  font-size: 50px;
+  color: rgb(255, 255, 255);
+  font-size: 42px;
   justify-self: center;
   font-family: 'Courier New', Courier, monospace;
 }
+
+.buttonwrapper {
+  background-color: rgba(17, 17, 17, 0.322);
+  height: 30px;
+  width: inherit;
+  color:rgba(0,255,0,.75);
+}
 button:hover {
-  background-color: rgb(248, 248, 248);
+  background-color: rgb(49, 193, 250);
   border: #1fdf19 solid 1px;
   color: rgb(31, 26, 45);
 }
 
-emojiButton {
-  position: relative;
-  background-color: #ffffff00;
-  border: none;
-  border-radius: 5px;
-  height: 4rem;
-  width: max-content;
-  color: rgb(92, 51, 51);
-  font-size: 20px;
-  justify-self: center;
-
-}
 li {
   list-style-type: none;
   display: inline-block;
+  border: rgba(0,255,0,.75);
 }
-
-name-input {
-  list-style-type: none;
-  display: inline-block;
-}
-
-emojiButton:hover {
-  background-color: rgba(255, 255, 255, 0);
-  border: #000000 solid 1px;
-  color: #41cc41;
-}
-
-
 
 .container {
   padding: 1rem;
   width: stretch;
   height: auto;
   display: none;
-  background: #ffffff;
+  background: #d909e0;
   opacity: .8;
 }
 
 .form {
   width: 50%
+  text-align: center;
+  border: rgb(49, 193, 250) solid 1px;
+  padding: 2rem;
+  width: 20rem;
+  height: 7rem;
+  display: inline-grid;
+  /* margin: 1rem 1rem; */
+  list-style-type: none;
+  display: inline-block;
 }
 
 .submit-input {
   position: relative;
-  background-color: #23b654;
+  background-color: rgb(49, 193, 250);
   border-radius: 5px;
   height: 2rem;
   width: max-content;
@@ -112,8 +150,8 @@ emojiButton:hover {
 }
 
 .submit-input:hover {
-  background-color: rgb(255, 255, 255);
-  border: #000000 solid 1px;
+  background-color: rgba(255, 255, 255, 0);
+  border: rgb(49, 193, 250) solid 1px;
   color: #8cf316;
 }
 
@@ -146,9 +184,12 @@ emojiButton:hover {
 }
 
 .react {
-  background-color: rgb(86, 230, 29);
-  height: 5px;
+  background-color: rgba(0,255,0,.75);
+  height: 2px;
 }
+
+
+
 
 
 

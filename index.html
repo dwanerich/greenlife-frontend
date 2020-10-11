@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
 <head>
     <meta charset="utf-8" />
     <title>GreenLife 123</title>
@@ -8,59 +15,78 @@
     <script type="text/javascript" defer src="plant.js"></script>
     <script type="text/javascript" src="ApiService.js"></script>
     <script type="text/javascript" src="reaction.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="index.css" />
 
+    
     
 </head>
 
 
 
-<header class="header">
-    <div id="greenlife-header">
-        <p style="text-align:center">
 
+
+
+        <header class="header">
+            <div id="greenlife-header">
+                <p style="text-align:center">
+
+                    <center><div id="parent">GreenL!fe🌱123<br><123<div id="border"></div></center>
+                </p>
+                <div class="react">
+                </div>
+
+            </div>
             
-            <button id="new-plant-btn">GreenL!fe🌱123</button> <br>
-      
-    
-              <div class="reactions">  <center>
-                <ul>
-                <li><emojiButton id="happy-btn">☀️ happy</button></li>
-                    <li><emojiButton id="thirsty-btn">💦 thirsty</button></li>
-                    <li> <emojiButton id="sad-btn">🥀 sad</button></li>
-                </ul> </center> </div>
+                      <center>
+                            <ul>
+                                    <li><button type="button" id="happy-head" class="btn btn-link">🌞happy<button></li>
+                                    <li><button type="button" id="thirsty-head" class="btn btn-link">💦thirsty<button></li>
+                                    <li><button type="button" id="sad-head" class="btn btn-link">sad🥀<button></li>
+                            </ul> </center>
 
-                
+                            
+        </header>
+
+
+            <body>
+                <center>
+                    <div class="buttonwrapper">
+                        <h1 id="counter">0 likes</h1>
+                        <button id="happy-reaction">🌞</button>
+                        <button id="thirsty-reaction">💦</button>
+                        <button id="sad-reaction">🥀</button>
+                    
+                    </div>
+
+                </center>
+               
+               
             
-    </div>
-    </header>
+            <main>
+                    <div id="collection" class="collection">
+                        
+                        <!-- Plant cards here -->
+                        
 
+                    </div>
+            </main>
 
-    <body>
-        <div class="react">
+        </body>
 
-        </div>
-    
-    <main>
+        <footer>
+            <center>
+            <form id="form" class="form">
+                <input id="name-input" type="text" name="name" placeholder="Enter plant's name..." class="name-input">
+                <input id="img-input" type="text" name="img_src" placeholder="Enter image url..." class="img-input">
+                <!-- <input id="caption-input" type="text" name="caption" placeholder="Caption this..." class="caption-input">  -->
+                <br><input type="submit" name="submit" value="Create-A-Plant" class="submit-input" />
+            </form>
+            </center>
 
-    <div id="collection" class="collection">
-        <!-- Plant cards here -->
-    </div>
+        
 
-    <form id="form" class="form">
-        <h3>Pic-A-Plant</h3>
-        <input id="name-input" type="text" name="name" placeholder="Enter plant's name..." class="name-input">
-        <input id="img-input" type="text" name="img_src" placeholder="Enter image url..." class="img-input">
-        <input id="caption-input" type="text" name="caption" placeholder="Caption this..." class="caption-input"> <br>
-        <input type="submit" name="submit" value="Create-A-Plant" class="submit-input" />
-    </form>
-
-    </main>
-
-</body>
-
-<!-- <footer>
-</footer> -->
+        </footer>
 
 
 </html>
