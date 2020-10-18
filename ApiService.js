@@ -35,4 +35,27 @@ class ApiService {
     }
 
 
+    static signUp(newUser) {
+        console.log("new-user", newUser)
+        return fetch("http://localhost:3000/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(newUser)
+        })
+            .then(response => {
+                console.log("response", response)
+                if (response.ok) {
+                    console.log(response.message)
+                    
+                    return response.json()
+                } else {
+                    throw Error("ERROR on Sign Up")
+                }
+            })
+    }
+
+
 }

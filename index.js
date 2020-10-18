@@ -1,66 +1,82 @@
 // dom stuff
 
 const plantForm = document.getElementById("form")
+const buttonWrapper = document.getElementById('buttonWrapper')
 const plantList = document.getElementById("collection")
 const happyBtn = document.getElementById('happy-head')
 const thirstyBtn = document.getElementById('thirsty-head')
 const sadBtn = document.getElementById('sad-head')
 
 
+const happyReaction = document.getElementById('happy-reaction')
+const thirstyReaction = document.getElementById('thirsty-reaction')
+const sadReaction = document.getElementById('sad-reaction')
 
-const happyClick = document.getElementById('happy-reaction')
-const thirstyClick = document.getElementById('thirsty-reaction')
-const sadClick = document.getElementById('sad-reaction')
+const happyReactionTwo = document.getElementById('happy-card')
+const thirstyReactionTwo = document.getElementById('thirsty-card')
+const sadReactionTwo = document.getElementById('sad-card')
+
+const signUpButton = document.getElementById("sign-up-button")
 
 
 const counter = document.getElementById('counter')
+const counterTwo = document.getElementById('counter-two')
 let count = 0;
 
 //  event listener
 plantForm.addEventListener("submit", handleFormSubmit)
 
-happyClick.addEventListener('click', () => {
-    count ++;
-    counter.innerHTML =" happy score " + count;
-})
-
 thirstyBtn.addEventListener('click', () => {
     console.log('you clicked thirsty')
 })
 
-thirstyClick.addEventListener('click', () => {
-    // console.log('you clicked thirsty')
-    swal("Are you sure you want to do this?", {
-        buttons: ["Scale Back!", "More Water!"],
-    });
+document.addEventListener("DOMContentLoaded", () => {
+    const userId = fetch("http://localhost:3000/users/current-user-id")
+        .then((response) =>  {
+            console.log("on page load response", response)
+        }).catch((error) => alert(error))
+
+    // console.log(userId)
 })
 
+signUpButton.addEventListener("click", (event) => {
+    const name = document.getElementById("name").value
+    const email = document.getElementById("email").value
+    const password = document.getElementById("password").value
 
-sadClick.addEventListener('click', () => {
-    count--;
-    counter.innerHTML = "sad score " + count;
-})
+
+    const newUser = {
+        name: name,
+        email: email,
+        password: password
+    }
+
+       ApiService.signUp(newUser).then(actualNewUser => {
+           document.getElementById("sign-up-form").innerHTML = ("<p>Welcome, " + actualNewUser.name + "</p>")
+           console.log(actualNewUser.id)
+        })
+        .catch(error => alert(error))
+
+
+    })
+
 
 // event handlers
 
 function handleFormSubmit(event) {
     event.preventDefault()
 
-    // get form data
+    // get form data 
 
 const newPlant = {
     name: event.target["name"].value,
     img_src: event.target["img_src"].value,
-    // caption: event.target["caption"].value
 }
+
 
 // plantForm.reset()
 console.log(newPlant)
 
-// function handleReaction(e) {
-//     e.preventDefault()
-
-// }
 
     // save plant on sever w/fetch request
     // POST /plants
@@ -78,25 +94,39 @@ console.log(newPlant)
         //Render Helpers
     function renderOnePlant(plantObj) {
         const plant = new Plant(plantObj)
+           
     }
 
     function renderAllPlants(plants) {
         plants.forEach(renderOnePlant)
+
+        moodHandler()
     }
 
+    function moodHandler() {
 
+        // plantList.addEventListener("click", (e) => {
 
-    // REACTION BUTTON LOGIC SECTION //
+        //     console.log(e.target)
+              
+        //     })
+        }
 
-    // LOGIC FOR HAPPY
-    // WHEN HAPPY IS CLICKED, INCREMENT COUNTER +1 && DECREMENT SAD COUNTER BY 1
+        happyReaction.addEventListener('click', () => {
+            count++;
+            counter.innerHTML = "happy direction " + count;
+        })
 
-    // LOGIC FOR THIRSTY
-    // WHEN THIRSTY IS CLICKED, INCREMENT COUNTER +1
-    // IF THIRSTY COUNTER AMOUNT IS = 2 FIRE OFF ALERT
-    // IF THIRSTY COUNTER >= 3, INCREMENT SAD COUNT +1
+        sadReaction.addEventListener('click', () => {
+            count--;
+            counter.innerHTML = "sad direction " + count;
+        })
 
-    // LOGIC FOR SAD
-    // WHEN SAD IS CLICKED, INCREMENT COUNTER +1
-    // IF SAD COUNTER AMOUNT IS >= 3, FIRE OFF API ADAPTER DELETE FUNCTION TO THAT CARD
+        thirstyReaction.addEventListener('click', () => {
+            // console.log('you clicked thirsty')
+            swal("Are you sure you want to do this?", {
+                buttons: ["Scale Back!", "More Water!"],
+            });
+    })
+
 

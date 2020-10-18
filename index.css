@@ -3,16 +3,27 @@
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
-  background-color: black;
+  background-image: url("https://i.gifer.com/32bt.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+}
+
+.bg {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #parent {
-  height: 51px;
+  height: 52px;
   white-space: nowrap;
   overflow: hidden; 
   font-family: 'Source Code Pro', monospace;  
   font-size: 50px;
-  color: rgb(255, 255, 255);
+  color: rgb(219, 219, 219);
   position: relative;
 }
 
@@ -74,7 +85,8 @@ img {
   height: 28rem;
   display: inline-grid;
   margin: 1rem 1rem;
-  background-color: rgb(17,17,17);
+  background-color: rgba(19, 18, 18, 0.575);
+  position: static;
 }
 
 .plant-avatar {
@@ -91,7 +103,7 @@ button {
   height: 3.5rem;
   width: max-content;
   color: rgb(255, 255, 255);
-  font-size: 42px;
+  font-size: 40px;
   justify-self: center;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -100,10 +112,10 @@ button {
   background-color: rgba(17, 17, 17, 0.322);
   height: 30px;
   width: inherit;
-  color:rgba(0,255,0,.75);
+  color:rgba(255, 255, 255, 0.75);
 }
 button:hover {
-  background-color: rgb(49, 193, 250);
+  background-color: rgba(49, 193, 250, 0.644);
   border: #1fdf19 solid 1px;
   color: rgb(31, 26, 45);
 }
@@ -187,6 +199,9 @@ li {
   background-color: rgba(0,255,0,.75);
   height: 2px;
 }
+
+
+
 
 
 

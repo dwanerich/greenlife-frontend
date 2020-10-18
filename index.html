@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en">
-<!--<![endif]-->
-
 <head>
     <meta charset="utf-8" />
     <title>GreenLife 123</title>
     <script type="text/javascript" defer src="index.js"></script>
     <script type="text/javascript" defer src="plant.js"></script>
     <script type="text/javascript" src="ApiService.js"></script>
-    <script type="text/javascript" src="reaction.js"></script>
+    <script type="text/javascript" src="UserForm.js"></script>
+
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="index.css" />
-
-    
     
 </head>
 
-
-
-
-
-
         <header class="header">
+
             <div id="greenlife-header">
                 <p style="text-align:center">
+                    
+                    <div class="sign-up" style="color: white;">
 
-                    <center><div id="parent">GreenL!fe🌱123<br><123<div id="border"></div></center>
+                        <form id="sign-up-form" class="sign-up-form">
+                            <p>Sign Up</p>
+
+                            <label for="name">Name: </label>
+                            <input id="name" type="text" name="name">
+
+                            <label for="email">Email: </label>
+                            <input id="email" type="text" name="email">
+
+                            <label for="password">Password: </label>
+                            <input id="password" type="password" name="password">
+
+                            <br>
+                            
+                            <div  name="submit"  id="sign-up-button" >Sign Up</div>
+                        </form>
+                    </div>
+
+                    <center><div id="parent">GreenL!fe🌱123<br><div id="border"></div></center>
+
+                    <!-- <form id="form" class="form">
+                        <label for="name">Name</label>
+                        <input type="name" class="username-input" id="username-input" aria-describedby="username-input"
+                            placeholder="Enter name">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <label for="password">Password</label>
+                        <input type="password" class="passowrd-input" id="" placeholder="Password">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form> -->
                 </p>
                 <div class="react">
                 </div>
@@ -39,42 +57,55 @@
             </div>
             
                       <center>
+                          
                             <ul>
                                     <li><button type="button" id="happy-head" class="btn btn-link">🌞happy<button></li>
                                     <li><button type="button" id="thirsty-head" class="btn btn-link">💦thirsty<button></li>
-                                    <li><button type="button" id="sad-head" class="btn btn-link">sad🥀<button></li>
+                                    <li><button type="button" id="sad-head" class="btn btn-link">🥀sad<button></li>
                             </ul> </center>
+
+                            
 
                             
         </header>
 
 
             <body>
+                
+                
                 <center>
                     <div class="buttonwrapper">
-                        <h1 id="counter">0 likes</h1>
+                        <h2 id="counter">0 Reactions</h2>
                         <button id="happy-reaction">🌞</button>
                         <button id="thirsty-reaction">💦</button>
                         <button id="sad-reaction">🥀</button>
                     
                     </div>
 
+                    
+
                 </center>
-               
-               
+
+                <br><br><br><br>
+
+            
+                
+                            
+                
+                
             
             <main>
                     <div id="collection" class="collection">
-                        
-                        <!-- Plant cards here -->
-                        
 
+                        <!-- Plant cards here -->
                     </div>
             </main>
 
         </body>
 
         <footer>
+
+            
             <center>
             <form id="form" class="form">
                 <input id="name-input" type="text" name="name" placeholder="Enter plant's name..." class="name-input">
@@ -83,8 +114,6 @@
                 <br><input type="submit" name="submit" value="Create-A-Plant" class="submit-input" />
             </form>
             </center>
-
-        
 
         </footer>
 
