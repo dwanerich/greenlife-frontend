@@ -19,7 +19,7 @@ class ApiService {
                 if (response.ok) {
                     return response.json()
                 } else {
-                    throw Error("No Bueno")
+                    throw Error("Yikes!")
                 }
             })
     }
@@ -57,5 +57,14 @@ class ApiService {
             })
     }
 
-
+    static logOut(id) {
+       
+        return fetch(`ttp://localhost:3000/users/sessions/${id}`, {
+            method: "DELETE"
+        })
+            .then(res => {
+                console.log(res)
+                return res.json()
+            })
+    }
 }

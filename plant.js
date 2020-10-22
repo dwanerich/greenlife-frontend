@@ -2,7 +2,7 @@ class Plant {
     constructor(plantObj) {
     this.plant = plantObj
     this.card = this.createCard()
-    // console.log(this.plant)
+    // console.log(plantObj)
     }
 
     createCard() {
@@ -17,25 +17,23 @@ class Plant {
     }
 
     handleClick = (event) => {
+        // console.log(event.target)
         let count = 0
-        let counterTwo = document.getElementById("counter-two")
+
+        let happyCounter = document.getElementById("happy-counter")
+
+        if (event.target.dataset.action === "happy") {
+                
+            // const a = happyCounter.closest("#happy-counter")
+            count++;
+            happyCounter.innerHTML = "happy score: " + count++;
+
+        }
         
-        console.log(event.target.id)
+        // console.log(event.target.id)
         if (event.target.dataset.action === "sad") {
             ApiService.deletePlant(this.plant.id).then(this.card.remove())
             
-        }
-
-        if (event.target.dataset.action === "happy") {
-                count++;
-                counterTwo.innerHTML = count++ + " moment of joy";
-            }
-            
-
-        if (event.target.dataset.action === "thirsty") {
-            swal("Are you sure you want to do this?", {
-                buttons: ["Scale Back!", "More Water!"],
-            });   
         }
         
     }
@@ -47,9 +45,9 @@ class Plant {
             <div class="name-input">${name}</div>
         <center>
             <div class="buttonWrapper" id="buttonWrapper">
-                <h2 class="counter-two" id="counter-two" data-action="counter">0 Activity</h2>
-                <button id="happy-card" data-action="happy">🌞</button>
-                <button id="thirsty-card" data-action="thirsty">💦</button>                    
+                <div id="happy-counter" data-action="counter">0 Activity</div>
+                <button id="happy-reaction" data-action="happy">🌞</button>
+                <div id="sad-counter" data-action="sad-counter">0 Activity</div>
                 <button id="sad-card" data-action="sad">🥀</button>
             </div>
         </center>

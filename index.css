@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 
+
 body {
   margin: 0;
   font-family: 'Courier New', Courier, monospace;
@@ -99,11 +100,11 @@ button {
   position: relative;
   background-color: transparent;
   border: rgba(0,255,0,.75);
-  border-radius: 5px;
-  height: 3.5rem;
+  border-radius: 6px;
+  height: 3rem;
   width: max-content;
   color: rgb(255, 255, 255);
-  font-size: 40px;
+  font-size: 30px;
   justify-self: center;
   font-family: 'Courier New', Courier, monospace;
 }
@@ -139,13 +140,13 @@ li {
   width: 50%
   text-align: center;
   border: rgb(49, 193, 250) solid 1px;
-  padding: 2rem;
+  padding: 1rem;
   width: 20rem;
-  height: 7rem;
-  display: inline-grid;
+  /* height: 7rem; */
+  /* display: inline-grid; */
   /* margin: 1rem 1rem; */
-  list-style-type: none;
-  display: inline-block;
+  /* list-style-type: none; */
+  /* display: inline-block; */
 }
 
 .submit-input {
@@ -155,7 +156,7 @@ li {
   height: 2rem;
   width: max-content;
   color: whitesmoke;
-  font-size: 18px;
+  font-size: 14px;
   justify-self: center;
   font-family: 'Courier New', Courier, monospace;
   margin: 3px;
@@ -172,7 +173,7 @@ li {
   border-radius: 5px;
   height: 2rem;
   width: 60%;
-  font-size: 18px;
+  font-size: 14px;
   font-family: 'Courier New', Courier, monospace;
   margin: 3px;
 }
@@ -181,7 +182,7 @@ li {
   border-radius: 5px;
   height: 2rem;
   width: 60%;
-  font-size: 18px;
+  font-size: 14px;
   font-family: 'Courier New', Courier, monospace;
   margin: 3px;
 }
@@ -190,7 +191,7 @@ li {
   border-radius: 5px;
   height: 2rem;
   width: 60%;
-  font-size: 18px;
+  font-size: 14px;
   font-family: 'Courier New', Courier, monospace;
   margin: 3px;
 }
@@ -198,6 +199,39 @@ li {
 .react {
   background-color: rgba(0,255,0,.75);
   height: 2px;
+}
+
+.sign-up-form {
+  width: 50%
+  text-align: center;
+  /* border: rgb(49, 193, 250) solid 1px; */
+  /* padding: 1rem; */
+  /* width: 20rem; */
+  /* height: 3rem; */
+  display: inline-grid;
+  /* margin: 1rem 1rem; */
+  /* list-style-type: none; */
+  display: inline-block;
+}
+
+.user-submit-button {
+  position: relative;
+  background-color: rgb(49, 193, 250);
+  border-radius: 5px;
+  height: 1.5rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 3px;
+  /* padding: 8rem; */
+}
+
+.user-submit-button:hover {
+  background-color: rgba(255, 255, 255, 0);
+  border: rgb(49, 193, 250) solid 1px;
+  color: #8cf316;
 }
 
 
