@@ -47,32 +47,12 @@ sadBtn.addEventListener('click', () => {
     swal("Death comes 💀 in 3's");
 })
 
-// if (signOutButton) {
-//     signOutButton.addEventListener('click', () => {
-//         console.log("sign out button clicked")
-
-
-//     })
-// }
-
-// signOutButton.addEventListener('click', () => {
-//     console.log("sign out button clicked")
-
-
-// })
-
 signUpButton.addEventListener("click", (event) => {
     const name = document.getElementById("name").value
     const email = document.getElementById("email").value
     const password = document.getElementById("password").value
 
 
-// signOutButton.addEventListener('click', () => {
-//     const userId = fetch("http://localhost:3000/users/sessions/destroy", { method: "DELETE"})
-//         .then((response) => {
-//             console.log("on page load response", response)
-//         }).catch((error) => alert(error))
-// })
 
     const newUser = {
         name: name,
@@ -81,21 +61,31 @@ signUpButton.addEventListener("click", (event) => {
     }
     // form.reset();
 
-       ApiService.signUp(newUser).then(actualNewUser => {
-           document.getElementById("sign-up-form").innerHTML = ("<p>Welcome, " + actualNewUser.name + "</p> <br> <p id='sign-out-button'>Sign Out</p>")
-           console.log(actualNewUser.id)
-           if (signOutButton) {
-               signOutButton.addEventListener('click', () => {
-                   console.log("sign out button clicked")
+    ApiService.signUp(newUser).then(actualNewUser => {
+        document.getElementById("sign-up-form").innerHTML = ("<div id='session-notifications'><p id='welcome-text'>Welcome, " + actualNewUser.name + "</p></div> <br> <p id='sign-out-button'>Sign Out</p>")
+
+        const signOutButton = document.getElementById("sign-out-button")
+
+        if (signOutButton) {
+            signOutButton.addEventListener('click', () => {
+                console.log("sign out button clicked")
 
 
-               })
-           }
-        })
+                const userId = fetch("http://localhost:3000/users/sign-out", { method: "DELETE" })
+                    .then((response) => {
+                        signOutButton.style["display"] = "none";
+                        document.getElementById("welcome-text").style["display"] = "none";
+                        document.getElementById("session-notifications").innerHTML = ("<p>You've successfully signed out</p>")
+
+                        console.log("on page load response", response)
+                    }).catch((error) => alert(error))
+            })
+        }
+    })
         .catch(error => alert(error))
 
 
-    })
+})
 
 
 // event handlers
@@ -103,16 +93,16 @@ signUpButton.addEventListener("click", (event) => {
 function handleFormSubmit(event) {
     event.preventDefault()
 
-    // get form data 
+    // get form data
 
-const newPlant = {
-    name: event.target["name"].value,
-    img_src: event.target["img_src"].value,
-}
+    const newPlant = {
+        name: event.target["name"].value,
+        img_src: event.target["img_src"].value,
+    }
 
 
-// plantForm.reset()
-console.log(newPlant)
+    // plantForm.reset()
+    console.log(newPlant)
 
 
     // save plant on sever w/fetch request
@@ -120,31 +110,30 @@ console.log(newPlant)
     ApiService.addPlant(newPlant).then(actualNewPlant => {
         console.log("actual: ", actualNewPlant)
         new Plant(actualNewPlant)
-        })
+    })
         .catch(error => alert(error))
-    }
+}
 
-    ApiService.fetchPlants()
+ApiService.fetchPlants()
     .then(actualPlantData => {
-    renderAllPlants(actualPlantData)
-    })
-    
-        //Render Helpers
-    function renderOnePlant(plantObj) {
-        const plant = new Plant(plantObj)        
-    }
-
-    function renderAllPlants(plants) {
-        plants.forEach(renderOnePlant)
-    }
-
-
-    happyReaction.addEventListener('click', () => {
-        count++;
-        counter.innerHTML = "happy score: " + count;
+        renderAllPlants(actualPlantData)
     })
 
-    sadReaction.addEventListener('click', () => {
-        count--;
-        counter.innerHTML = "sad score: " + count;
-    })        
+//Render Helpers
+function renderOnePlant(plantObj) {
+    const plant = new Plant(plantObj)
+}
+
+function renderAllPlants(plants) {
+    plants.forEach(renderOnePlant)
+}
+
+happyReaction.addEventListener('click', () => {
+    count++;
+    counter.innerHTML = "happy score: " + count;
+})
+
+sadReaction.addEventListener('click', () => {
+    count--;
+    counter.innerHTML = "sad score: " + count;
+})
