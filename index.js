@@ -1,6 +1,4 @@
 // dom stuff
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const userId = fetch("http://localhost:3000/users/current-user-id")
         .then((response) => {
@@ -10,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // console.log(userId)
 })
 
+// global variable declarations
+
 const plantForm = document.getElementById("form")
 const buttonWrapper = document.getElementById('buttonWrapper')
 const plantList = document.getElementById("collection")
@@ -17,12 +17,8 @@ const happyBtn = document.getElementById('happy-head')
 const sadBtn = document.getElementById('sad-head')
 const signOutButton = document.getElementById("sign-out-button")
 
-
 const happyReaction = document.getElementById('happy-reaction')
 const sadReaction = document.getElementById('sad-reaction')
-
-// const happyCounter = document.getElementById('happy-card')
-// const sadCounter = document.getElementById('sad-card')
 
 const happyCounter = document.getElementById('happy-counter')
 
@@ -44,7 +40,7 @@ happyBtn.addEventListener('click', () => {
 
 sadBtn.addEventListener('click', () => {
     console.log('you clicked thirsty')
-    swal("Death comes 💀 in 3's");
+    swal("Sadness 💀 Kills");
 })
 
 signUpButton.addEventListener("click", (event) => {
@@ -83,8 +79,6 @@ signUpButton.addEventListener("click", (event) => {
         }
     })
         .catch(error => alert(error))
-
-
 })
 
 

@@ -2,6 +2,7 @@ class Plant {
     constructor(plantObj) {
     this.plant = plantObj
     this.card = this.createCard()
+    this.count = 0
     // console.log(plantObj)
     }
 
@@ -11,32 +12,30 @@ class Plant {
         card.dataset.id = this.plant.id
         card.innerHTML = this.renderInnerHTML()
         collection.append(card)
+
         card.addEventListener('click', this.handleClick)
-        // console.log(card)
-        return card
+          return card
     }
 
-    handleClick = (event) => {
-        // console.log(event.target)
-        let count = 0
 
+
+
+    handleClick = (event) => {
         let happyCounter = document.getElementById("happy-counter")
 
-        if (event.target.dataset.action === "happy") {
-                
-            // const a = happyCounter.closest("#happy-counter")
-            count++;
-            happyCounter.innerHTML = "happy score: " + count++;
 
+        if (event.target.dataset.action === "happy") {
+            this.count++ 
+            happyCounter.innerHTML = "happy score: " + this.count;
         }
         
         // console.log(event.target.id)
         if (event.target.dataset.action === "sad") {
             ApiService.deletePlant(this.plant.id).then(this.card.remove())
-            
         }
-        
     }
+
+
 
     renderInnerHTML() {
         const { img_src, name} = this.plant

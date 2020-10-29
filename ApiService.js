@@ -34,6 +34,15 @@ class ApiService {
             })
     }
 
+    static incrementHappy(plantId) {
+        return fetch(`http://localhost:3000/plants/${plantId}`, {
+            method: "PUT"
+        })
+            .then(res => {
+                console.log(res)
+                return res.json()
+            })
+    }
 
     static signUp(newUser) {
         console.log("new-user", newUser)
@@ -57,14 +66,22 @@ class ApiService {
             })
     }
 
-    static logOut(id) {
+    // static logOut {
        
-        return fetch(`ttp://localhost:3000/users/sessions/${id}`, {
-            method: "DELETE"
-        })
-            .then(res => {
-                console.log(res)
-                return res.json()
-            })
-    }
+        // if (signOutButton) {
+        //     signOutButton.addEventListener('click', () => {
+        //         console.log("sign out button clicked")
+
+
+        //         const userId = fetch("http://localhost:3000/users/sign-out", { method: "DELETE" })
+        //             .then((response) => {
+        //                 signOutButton.style["display"] = "none";
+        //                 document.getElementById("welcome-text").style["display"] = "none";
+        //                 document.getElementById("session-notifications").innerHTML = ("<p>You've successfully signed out</p>")
+
+        //                 console.log("on page load response", response)
+        //             }).catch((error) => alert(error))
+        //     })
+        // }
+    // }
 }
