@@ -21,6 +21,7 @@ class Plant {
 
 
     handleClick = (event) => {
+        // rather than getting element by ID, find CLOSEST #happy-counter to the event's target
         let happyCounter = document.getElementById("happy-counter")
 
 
@@ -34,8 +35,6 @@ class Plant {
             ApiService.deletePlant(this.plant.id).then(this.card.remove())
         }
     }
-
-
 
     renderInnerHTML() {
         const { img_src, name} = this.plant
