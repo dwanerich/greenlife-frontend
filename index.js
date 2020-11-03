@@ -2,8 +2,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const userId = fetch("http://localhost:3000/users/current-user-id")
         .then((response) => {
-            console.log("on page load response", response)
         }).catch((error) => alert(error))
+            console.log("on page load response", response)
 
     // console.log(userId)
 })
@@ -15,7 +15,6 @@ const buttonWrapper = document.getElementById('buttonWrapper')
 const plantList = document.getElementById("collection")
 const happyBtn = document.getElementById('happy-head')
 const sadBtn = document.getElementById('sad-head')
-const signOutButton = document.getElementById("sign-out-button")
 
 const happyReaction = document.getElementById('happy-reaction')
 const sadReaction = document.getElementById('sad-reaction')
@@ -23,6 +22,7 @@ const sadReaction = document.getElementById('sad-reaction')
 const happyCounter = document.getElementById('happy-counter')
 
 const signUpButton = document.getElementById("sign-up-button")
+const signOutButton = document.getElementById("sign-out-button")
 
 const counter = document.getElementById('counter')
 let count = 0;

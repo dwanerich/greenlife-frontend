@@ -1,8 +1,10 @@
 class Plant {
     constructor(plantObj) {
     this.plant = plantObj
-    this.card = this.createCard()
     this.count = 0
+    this.card = this.createCard()
+    console.log(this.card)
+
     // console.log(plantObj)
     }
 
@@ -22,12 +24,16 @@ class Plant {
 
     handleClick = (event) => {
         // rather than getting element by ID, find CLOSEST #happy-counter to the event's target
-        let happyCounter = document.getElementById("happy-counter")
+        // let happyCounter = document.getElementById("happy-counter")
+        
 
 
         if (event.target.dataset.action === "happy") {
-            this.count++ 
-            happyCounter.innerHTML = "happy score: " + this.count;
+            this.count++
+            this.card.innerHTML = this.renderInnerHTML()
+
+
+            // happyCounter.innerHTML = "happy score: " + this.count;
         }
         
         // console.log(event.target.id)
@@ -38,12 +44,14 @@ class Plant {
 
     renderInnerHTML() {
         const { img_src, name} = this.plant
+        console.log(this.count)
         return `
             <div class="img-input"><img src="${img_src}" alt="${name}"></div>
             <div class="name-input">${name}</div>
         <center>
             <div class="buttonWrapper" id="buttonWrapper">
-                <div id="happy-counter" data-action="counter">0 Activity</div>
+                <div id="happy-counter" data-action="counter">${this.count} Activity</div>
+        
                 <button id="happy-reaction" data-action="happy">🌞</button>
                 <div id="sad-counter" data-action="sad-counter">0 Activity</div>
                 <button id="sad-card" data-action="sad">🥀</button>
