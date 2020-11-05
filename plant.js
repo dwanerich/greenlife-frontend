@@ -20,20 +20,11 @@ class Plant {
     }
 
 
-
-
     handleClick = (event) => {
-        // rather than getting element by ID, find CLOSEST #happy-counter to the event's target
-        // let happyCounter = document.getElementById("happy-counter")
         
-
-
         if (event.target.dataset.action === "happy") {
             this.count++
             this.card.innerHTML = this.renderInnerHTML()
-
-
-            // happyCounter.innerHTML = "happy score: " + this.count;
         }
         
         // console.log(event.target.id)

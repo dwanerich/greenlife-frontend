@@ -3,12 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const userId = fetch("http://localhost:3000/users/current-user-id")
         .then((response) => {
         }).catch((error) => alert(error))
-            console.log("on page load response", response)
+        console.log("on page load response")
+        document.getElementById('form').style.display = "none"
 
     // console.log(userId)
 })
 
 // global variable declarations
+
+const state = {
+
+    user: {}
+}
 
 const plantForm = document.getElementById("form")
 const buttonWrapper = document.getElementById('buttonWrapper')
@@ -57,8 +63,11 @@ signUpButton.addEventListener("click", (event) => {
     }
     // form.reset();
 
+
     ApiService.signUp(newUser).then(actualNewUser => {
         document.getElementById("sign-up-form").innerHTML = ("<div id='session-notifications'><p id='welcome-text'>Welcome, " + actualNewUser.name + "</p></div> <br> <p id='sign-out-button'>Sign Out</p>")
+        state.user = actualNewUser
+        document.getElementById('form').style.display = "block"
 
         const signOutButton = document.getElementById("sign-out-button")
 
@@ -92,6 +101,7 @@ function handleFormSubmit(event) {
     const newPlant = {
         name: event.target["name"].value,
         img_src: event.target["img_src"].value,
+        user_id: state.user.id
     }
 
 
