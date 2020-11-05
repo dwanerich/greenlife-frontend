@@ -81,6 +81,8 @@ signUpButton.addEventListener("click", (event) => {
                         signOutButton.style["display"] = "none";
                         document.getElementById("welcome-text").style["display"] = "none";
                         document.getElementById("session-notifications").innerHTML = ("<p>You've successfully signed out</p>")
+                        document.getElementById('form').style.display = "none"
+
 
                         console.log("on page load response", response)
                     }).catch((error) => alert(error))

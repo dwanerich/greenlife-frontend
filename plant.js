@@ -34,18 +34,19 @@ class Plant {
     }
 
     renderInnerHTML() {
-        const { img_src, name} = this.plant
+        const { img_src, name, user} = this.plant
         console.log(this.count)
         return `
             <div class="img-input"><img src="${img_src}" alt="${name}"></div>
-            <div class="name-input">${name}</div>
+            <div class="name-input">${user.name}'s ${name}</div>
         <center>
             <div class="buttonWrapper" id="buttonWrapper">
-                <div id="happy-counter" data-action="counter">${this.count} Activity</div>
+                <div id="happy-counter" data-action="counter">${this.count} Likes</div>
         
                 <button id="happy-reaction" data-action="happy">🌞</button>
-                <div id="sad-counter" data-action="sad-counter">0 Activity</div>
+                <div id="sad-counter" data-action="sad-counter"></div>
                 <button id="sad-card" data-action="sad">🥀</button>
+                <div> <p> ${user.name}'s  </p> </div>
             </div>
         </center>
         `
