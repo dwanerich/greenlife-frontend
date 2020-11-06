@@ -22,8 +22,8 @@ const plantList = document.getElementById("collection")
 const happyBtn = document.getElementById('happy-head')
 const sadBtn = document.getElementById('sad-head')
 
-const happyReaction = document.getElementById('happy-reaction')
-const sadReaction = document.getElementById('sad-reaction')
+// const happyReaction = document.getElementById('happy-reaction')
+// const sadReaction = document.getElementById('sad-reaction')
 
 const happyCounter = document.getElementById('happy-counter')
 

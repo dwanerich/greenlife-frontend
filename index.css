@@ -83,7 +83,7 @@ img {
   border: rgb(49, 193, 250) solid 1.5px;
   padding: 2rem;
   width: 20rem;
-  height: 28rem;
+  height: 28.5rem;
   display: inline-grid;
   margin: 1rem 1rem;
   background-color: rgba(19, 18, 18, 0.575);
@@ -101,7 +101,7 @@ button {
   background-color: transparent;
   border: rgba(0,255,0,.75);
   border-radius: 6px;
-  height: 3rem;
+  height: 2.5rem;
   width: max-content;
   color: rgb(255, 255, 255);
   font-size: 30px;
@@ -142,11 +142,6 @@ li {
   border: rgb(49, 193, 250) solid 1px;
   padding: 1rem;
   width: 20rem;
-  /* height: 7rem; */
-  /* display: inline-grid; */
-  /* margin: 1rem 1rem; */
-  /* list-style-type: none; */
-  /* display: inline-block; */
 }
 
 .submit-input {

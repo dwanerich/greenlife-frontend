@@ -38,15 +38,16 @@ class Plant {
         console.log(this.count)
         return `
             <div class="img-input"><img src="${img_src}" alt="${name}"></div>
-            <div class="name-input">${user.name}'s ${name}</div>
         <center>
             <div class="buttonWrapper" id="buttonWrapper">
-                <div id="happy-counter" data-action="counter">${this.count} Likes</div>
-        
-                <button id="happy-reaction" data-action="happy">🌞</button>
+                <div style="color: red;"> <p> ${user.name}'s ${name} </p> </div>
+                
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <div id="happy-counter" data-action="counter" style="color: white;">${this.count} Likes</div>
+                <button id="happy-reaction" data-action="happy">🌞
                 <div id="sad-counter" data-action="sad-counter"></div>
                 <button id="sad-card" data-action="sad">🥀</button>
-                <div> <p> ${user.name}'s  </p> </div>
+         
             </div>
         </center>
         `
